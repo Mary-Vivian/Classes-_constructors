@@ -61,7 +61,6 @@ class Car {
       if(currentquestion.checkAnswer(userAnswer)){
         this.score++;
       }
-      this.nextQuestion();}
 
     }
 
