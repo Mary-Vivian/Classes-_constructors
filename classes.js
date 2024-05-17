@@ -57,11 +57,22 @@ class Car {
       this.currentQuestionIndex++;
     }
     submitAnswer(userAnswer){
-      const currentquestion=this.Question
-      if(currentquestion.checkAnswer(userAnswer)){
-        this.score++;
+      const currentQuestion=this.questions[this.currentQuestionIndex];
+      if(currentQuestion.checkAnswer(userAnswer)){
+        return this.score++;
       }
-
+    
+        this.nextQuestion();
     }
+  }
 
+  const question1= new Question("Where do you come from",["Kenya","London","Egypt"],"Kenya")
+   
+  const question2= new Question("How many galaxies are their?",["100","200","200"],"200");
+   const quiz=new Quiz();
+   quiz.addQuestion(question1);
+   quiz.addQuestion(question2);
 
+   quiz.submitAnswer("Henta");
+   quiz.submitAnswer("200");
+console.log(Quiz.score);
